@@ -83,7 +83,7 @@ class SVGAParser(private val context: Context) {
 
     var fileDownloader = FileDownloader()
     private var threadPoolBlockingQueue = LinkedBlockingQueue<Runnable>()
-    private var threadPoolExecutor = ThreadPoolExecutor(3, 10, 60000, TimeUnit.MILLISECONDS, this.threadPoolBlockingQueue)
+    private var threadPoolExecutor = ThreadPoolExecutor(3, 10, 60000, TimeUnit.MILLISECONDS, this.threadPoolBlockingQueue,Util.threadFactory("svgaplayer Dispatcher", false))
 
     protected fun finalize() {
         threadPoolExecutor.shutdown()
