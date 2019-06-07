@@ -1,6 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+//添加complie生成依赖
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.milin411@163.com'//最后一个是github账号
 
 android {
     compileSdkVersion 28
